@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c9a668520eb5241a6211f0fe50440b, type: 3}
+  m_Name: B-OpenFlat-Wide-A
+  m_EditorClassIdentifier: 
+  gestureName: B-OpenFlat-Wide-A
+  orderedKeyFrames:
+  - {fileID: 11400000, guid: a1de91fc181e6a14f9fda1daa2ed06ef, type: 2}
+  - {fileID: 11400000, guid: 073fa866e781ab445b5033e8a412302a, type: 2}
+  - {fileID: 11400000, guid: c44a3b50ccdffeb469eaf6f973f36e72, type: 2}
+  - {fileID: 11400000, guid: 7d12897d85e0b9041b5c5f766d847676, type: 2}
+  execTime: 7

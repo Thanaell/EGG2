@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c9a668520eb5241a6211f0fe50440b, type: 3}
+  m_Name: Complex
+  m_EditorClassIdentifier: 
+  gestureName: Complex
+  orderedKeyFrames:
+  - {fileID: 11400000, guid: cbb5a6e17ad450c4c9d17907d7b0b12e, type: 2}
+  - {fileID: 11400000, guid: d0946a1b57d363f4ca09a6da5b0b6230, type: 2}
+  - {fileID: 11400000, guid: 26b7df94af32a6141ab63ac3facb6f26, type: 2}
+  - {fileID: 11400000, guid: d9b4bae713787bb4faaca9062ed57c58, type: 2}
+  execTime: 8
