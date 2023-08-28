@@ -443,6 +443,11 @@ Transform:
   m_Father: {fileID: 1022185937}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &192779688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6124341562723998409, guid: 0231801f40253aa45b645149f57c4d2c, type: 3}
+  m_PrefabInstance: {fileID: 1598101393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &274661228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,26 +2341,14 @@ GameObject:
   - component: {fileID: 1519939777}
   - component: {fileID: 1519939776}
   - component: {fileID: 1519939775}
-  - component: {fileID: 1519939774}
+  - component: {fileID: 1519939778}
   m_Layer: 0
   m_Name: ExternalHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1519939774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519939773}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795ca77d4c6f27d44a719786ef91ba24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_IsActive: 0
 --- !u!114 &1519939775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,30 +2367,30 @@ MonoBehaviour:
   _enablePhysicsCapsules: 0
   _applyBoneTranslations: 0
   _customBones_V2:
-  - {fileID: 709983581}
-  - {fileID: 279767833}
-  - {fileID: 1319046821}
-  - {fileID: 723641354}
-  - {fileID: 1092839133}
-  - {fileID: 826008046}
-  - {fileID: 694798062}
-  - {fileID: 1380019629}
-  - {fileID: 552010875}
-  - {fileID: 1022185937}
-  - {fileID: 143450919}
-  - {fileID: 71539096}
-  - {fileID: 453430157}
-  - {fileID: 72926320}
-  - {fileID: 907569276}
-  - {fileID: 1375205631}
-  - {fileID: 2101194816}
-  - {fileID: 75127748}
-  - {fileID: 1769277171}
-  - {fileID: 1207709228}
-  - {fileID: 959883833}
-  - {fileID: 548547340}
-  - {fileID: 1998079975}
-  - {fileID: 1065891731}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2451,7 +2444,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519939773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
   m_Name: 
@@ -2474,6 +2467,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519939778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519939773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eb8eb2b9d62d34697360708a3083df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userHand: {fileID: 1840297220}
+  cameraRig: {fileID: 192779688}
+  forwardOffset: 0
+  rightOffset: -0.13
+  upOffset: 0
 --- !u!1 &1597013318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,6 +2907,11 @@ Transform:
   m_Father: {fileID: 723641354}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1840297220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6124341562723999747, guid: 0231801f40253aa45b645149f57c4d2c, type: 3}
+  m_PrefabInstance: {fileID: 1598101393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848126850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,7 +2985,7 @@ GameObject:
   - component: {fileID: 1899698016}
   - component: {fileID: 1899698015}
   m_Layer: 0
-  m_Name: ActivitySpot
+  m_Name: SigningActivitySpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,7 +3014,7 @@ MonoBehaviour:
     overrideHand: {fileID: 1598101394}
   currentShowTechnique: 2
   triggerArea: {fileID: 1669730313}
-  animationName: Victory
+  animationName: SOS-ASL
 --- !u!4 &1899698016
 Transform:
   m_ObjectHideFlags: 0
@@ -3008,7 +3023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899698014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0.5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:

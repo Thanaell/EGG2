@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 8298269698017964132, guid: f80a9501a3cda474b82505ad9be8c733, type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 7400000, guid: afe2517878342c34bbe7e4f937491728, type: 2}
+      objectReference: {fileID: 7400000, guid: 10c94eb486c31a8408b6d5c1bbf762d6, type: 2}
     - target: {fileID: 8298269698017964132, guid: f80a9501a3cda474b82505ad9be8c733, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e8079a1374e6042a18a48546b55f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationName: DownSlide
+  animationName: SOS-ASL
   overrideAnimator: {fileID: 1681757326}
   overrideHand: {fileID: 1531092394}
 --- !u!4 &628235730
