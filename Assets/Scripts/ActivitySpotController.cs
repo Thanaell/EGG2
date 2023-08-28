@@ -60,14 +60,14 @@ public class ActivitySpotController : MonoBehaviour
                 usedHand = hands.externalHand;
                 break;
         }
-
-        usedAnimator.keepAnimatorControllerStateOnDisable = false;
     }
 
     private void Update()
     {
+        // Hand is in the activity and not in animation
         if (isInside && !isAnim)
         {
+            // Start coroutine when we reach the next play timestamp
             if (Time.time > nextAnimPlayTimestamp)
             {
                 StartCoroutine(SetNextAnimPlayTimestamp());
@@ -77,6 +77,7 @@ public class ActivitySpotController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // Preparing the lerp when the override animation ends
         if (isPreparingLerp)
         {
             isPreparingLerp = false;
@@ -89,8 +90,8 @@ public class ActivitySpotController : MonoBehaviour
             lerpEndPositions = new List<Vector3>();
             lerpEndRotations = new List<Quaternion>();
 
-            OVRSkeleton overrideSkeleton = hands.overrideHand.GetComponent<OVRSkeleton>();
             // Setting both positions and rotations from the end of animation to the currently tracked hand
+            OVRSkeleton overrideSkeleton = hands.overrideHand.GetComponent<OVRSkeleton>();
             foreach (OVRBone bone in overrideSkeleton.Bones)
             {
                 lerpStartPositions.Add(new Vector3(bone.Transform.localPosition.x, bone.Transform.localPosition.y, bone.Transform.localPosition.z));
@@ -106,7 +107,7 @@ public class ActivitySpotController : MonoBehaviour
         }
 
         // If lerp is active, actually lerping in position and rotation until the main hand is back to its actual tracked position
-        if (currentShowTechnique == SHOWING_TECHNIQUE.OVERRIDE_HAND && isLerping)
+        if (isLerping)
         {
             if (Time.time > lerpStartTime + lerpDurationAfterShow)
             {
@@ -114,8 +115,10 @@ public class ActivitySpotController : MonoBehaviour
             }
             else
             {
+                // How far into the lerp we are
                 float lerpProgression = (Time.time - lerpStartTime) / lerpDurationAfterShow;
 
+                // Lerping every bones according to the progress
                 int boneIndex = 0;
                 OVRSkeleton mainSkeleton = hands.mainHand.GetComponent<OVRSkeleton>();
                 foreach (OVRBone bone in mainSkeleton.Bones)
@@ -129,19 +132,34 @@ public class ActivitySpotController : MonoBehaviour
         }
     }
 
+    // Method called to clean after the animation
+    public void FinishAnimation()
+    {
+        isAnim = false;
+        usedAnimator.enabled = false;
+
+        usedHand.SetActive(false);
+        hands.mainHandRenderer.enabled = true;
+    }
+
+    // Method called OnTriggerEnter of the activity
     public void PlayActivity()
     {
         isInside = true;
     }
 
+    // Method called OnTriggerExit of the activity
     public void StopActivity()
     {
         isInside = false;
 
-        usedAnimator.enabled = false;
-        usedHand.SetActive(false);
-        hands.mainHandRenderer.enabled = true;
+        // Kill coroutine to prevent weird delayed behaviours
+        StopAllCoroutines();
 
+        isPreparingLerp = false;
+        isLerping = false;
+
+        FinishAnimation();
         nextAnimPlayTimestamp = -1;
     }
 
@@ -154,8 +172,6 @@ public class ActivitySpotController : MonoBehaviour
             hands.mainHandRenderer.enabled = false;
         }
 
-        // FIXME if we exit and re-enter the trigger area too fast
-        //       the animation continues instead of starting over
         usedAnimator.Play(animationName);
 
         yield return new WaitForEndOfFrame();
@@ -175,9 +191,7 @@ public class ActivitySpotController : MonoBehaviour
 
         if (isInside)
         {
-            usedAnimator.enabled = false;
-            usedHand.SetActive(false);
-            hands.mainHandRenderer.enabled = true;
+            FinishAnimation();
         }
     }
 }
